@@ -1,79 +1,359 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Privacy Policy - Local Live Audio Streaming</title>
-    <style>
-      * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f5f5f7; color: #1d1d1f; }
-        header { background: #1c1c1e; color: #fff; padding: 40px 20px; text-align: center; }
-        header h1 { font-size: 2rem; font-weight: 700; }
-    header p { margin-top: 8px; font-size: 1rem; color: #aeaeb2; }
-        .container { max-width: 760px; margin: 40px auto; padding: 0 20px; }
-    .card { background: #fff; border-radius: 16px; padding: 30px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
-          h2 { font-size: 1.2rem; margin-bottom: 12px; color: #1d1d1f; }
-    p { font-size: 1rem; line-height: 1.7; color: #3a3a3c; margin-bottom: 12px; }
-    p:last-child { margin-bottom: 0; }
-    a { color: #0071e3; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .back-link { display: inline-block; margin-bottom: 20px; color: #0071e3; font-size: 0.95rem; }
-    footer { text-align: center; padding: 30px; font-size: 0.9rem; color: #8e8e93; }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Local Live Audio Streaming</title>
+  <meta
+    name="description"
+    content="Privacy policy for Local Live Audio Streaming by Loud and Beyond."
+  >
+  <style>
+    :root {
+      --bg: #08111d;
+      --panel: rgba(10, 20, 34, 0.92);
+      --line: rgba(123, 151, 186, 0.16);
+      --text: #f4f7fb;
+      --muted: #a8b3c6;
+      --accent: #d5ff50;
+      --accent-soft: rgba(213, 255, 80, 0.14);
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(213, 255, 80, 0.12), transparent 24%),
+        radial-gradient(circle at top left, rgba(110, 214, 229, 0.08), transparent 20%),
+        linear-gradient(180deg, #09111d 0%, #0b1625 54%, #08111d 100%);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 56px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(8, 15, 26, 0.55);
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 16px;
+      z-index: 5;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, #10223a, #0a1321);
+      font-size: 18px;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 0.98rem;
+    }
+
+    .brand-copy span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .topbar a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .topbar a.primary {
+      background: var(--accent);
+      color: #152009;
+      font-weight: 800;
+    }
+
+    .hero,
+    .policy-card {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      padding: 34px;
+      margin-bottom: 24px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -70px;
+      right: -70px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(213, 255, 80, 0.12);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(120, 154, 42, 0.2);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      margin-bottom: 14px;
+      max-width: 12ch;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero p {
+      position: relative;
+      z-index: 1;
+      color: var(--muted);
+      max-width: 64ch;
+      line-height: 1.8;
+      font-size: 1.02rem;
+    }
+
+    .policy-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .policy-card {
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+
+    .policy-card h2 {
+      font-size: 1.26rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .policy-card p,
+    .policy-card li {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 0.98rem;
+    }
+
+    .policy-card ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .policy-card li {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .policy-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px var(--accent-soft);
+    }
+
+    .policy-card p + p,
+    .policy-card ul + p {
+      margin-top: 10px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 20px 4px 6px;
+      color: #8e99ab;
+      font-size: 0.92rem;
+    }
+
+    footer nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        width: min(100% - 20px, 980px);
+        padding-top: 16px;
+      }
+
+      .hero,
+      .policy-card {
+        padding: 22px;
+      }
+    }
   </style>
-    </head>
+</head>
 <body>
-        <header>
-    <h1>Privacy Policy</h1>
-        <p>Local Live Audio Streaming &mdash; by Loud and Beyond</p>
-  </header>
-  <div class="container">
-        <a class="back-link" href="index.html">&larr; Back to Support</a>
-    <div class="card">
-      <h2>Introduction</h2>
-          <p>Loud and Beyond ("we", "us", or "our") operates the Local Live Audio Streaming mobile application (the "App"). This Privacy Policy explains how we handle information when you use our App.</p>
-                <p>By using the App, you agree to the practices described in this policy. If you do not agree, please do not use the App.</p>
-        </div>
-        <div class="card">
-      <h2>Information We Do Not Collect</h2>
-          <p>Local Live Audio Streaming is designed with your privacy in mind. The App does not collect, store, or transmit any personally identifiable information. Specifically, we do not collect:</p>
-      <p>- Your name, email address, or any contact details</p>
-      <p>- Your device location data</p>
-      <p>- Your IP address or network identifiers</p>
-      <p>- Any audio content you listen to</p>
-      <p>- Any usage statistics or analytics data</p>
-            <p>- Any account credentials</p>
-    </div>
-        <div class="card">
-      <h2>How the App Works</h2>
-          <p>The App allows you to connect to local audio streams at events and venues by scanning a QR code or manually entering an IP address provided by the event host. All audio streaming occurs entirely on the local network. No audio data or connection information is sent to our servers or any third party.</p>
-          <p>The IP address or QR code you use to connect is only held temporarily in device memory during your session and is never transmitted outside of your local network.</p>
-        </div>
-    <div class="card">
-      <h2>Local Network Access</h2>
-          <p>The App requests access to your device local network in order to connect to audio streams. This permission is used solely for establishing the audio connection within your local network and for no other purpose.</p>
-    </div>
-    <div class="card">
-      <h2>Third-Party Services</h2>
-      <p>The App does not integrate any third-party analytics, advertising, or tracking services. We do not share any data with third parties because we do not collect any data in the first place.</p>
-    </div>
-    <div class="card">
-      <h2>Children Privacy</h2>
-          <p>Our App does not knowingly collect any personal information from children under the age of 13. Since we collect no personal data at all, the App is safe for users of all ages.</p>
-          </div>
-    <div class="card">
-            <h2>Changes to This Privacy Policy</h2>
-          <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated effective date. We encourage you to review this policy periodically.</p>
-      <p>This policy was last updated on April 8, 2026.</p>
-        </div>
-        <div class="card">
-          <h2>Contact Us</h2>
-          <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-          <p>Loud and Beyond</p>
-      <p>Email: info@loudandbeyond.com</p>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">🎧</div>
+        <div class="brand-copy">
+          <strong>Local Live Audio Streaming</strong>
+          <span>Privacy policy by Loud and Beyond</span>
         </div>
       </div>
-      <footer>
-        <p>2026 Loud and Beyond. All rights reserved.</p>
-  </footer>
+      <a class="primary" href="index.html">Back to support</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="pill">Privacy</span>
+        <h1>Built for local listening, not data collection.</h1>
+        <p>
+          Local Live Audio Streaming is designed for controlled local-network audio delivery at conferences,
+          events, and interpretation environments. The app is intended to keep listener access simple while
+          minimizing the amount of information handled by the product.
+        </p>
+      </section>
+
+      <section class="policy-grid">
+        <article class="policy-card">
+          <h2>Introduction</h2>
+          <p>
+            Loud and Beyond ("we", "us", or "our") operates the Local Live Audio Streaming mobile application
+            (the "App"). This policy explains how information is handled when you use the app.
+          </p>
+          <p>
+            By using the app, you agree to the practices described here. If you do not agree, do not use the app.
+          </p>
+        </article>
+
+        <article class="policy-card">
+          <h2>Information we do not collect</h2>
+          <p>The app is designed to avoid collecting personal data. We do not collect or store:</p>
+          <ul>
+            <li>Your name, email address, or contact details</li>
+            <li>Your location data</li>
+            <li>Your listening history</li>
+            <li>Audio content you listen to</li>
+            <li>Advertising identifiers or analytics tracking data</li>
+            <li>Account credentials for a user profile system</li>
+          </ul>
+        </article>
+
+        <article class="policy-card">
+          <h2>How the app works</h2>
+          <p>
+            The app connects listeners to authorized local audio rooms using a QR code, room URL, or network details
+            supplied by the event host. The app is designed around room-based local streaming rather than public media access.
+          </p>
+          <p>
+            Room details used for connection are handled only to establish the session and are not intended to be transmitted
+            to external analytics or advertising services.
+          </p>
+        </article>
+
+        <article class="policy-card">
+          <h2>Local network access</h2>
+          <p>
+            The app may require local network access so it can discover and connect to the event audio system.
+            That access is used for local streaming connectivity only.
+          </p>
+        </article>
+
+        <article class="policy-card">
+          <h2>Third-party services</h2>
+          <p>
+            The app is not intended to integrate third-party advertising, tracking, or analytics services as part of
+            the listening flow.
+          </p>
+        </article>
+
+        <article class="policy-card">
+          <h2>Children's privacy</h2>
+          <p>
+            The app is not designed to collect personal information from children. Since the product is structured to minimize
+            personal data collection, it is intended to be safe for general event use across age groups.
+          </p>
+        </article>
+
+        <article class="policy-card">
+          <h2>Changes to this policy</h2>
+          <p>
+            We may update this privacy policy from time to time. Any updates will be published on this page.
+          </p>
+          <p>This policy was last updated on April 17, 2026.</p>
+        </article>
+
+        <article class="policy-card">
+          <h2>Contact</h2>
+          <p>If you have questions about this policy, contact:</p>
+          <p><strong>Loud and Beyond</strong><br>info@loudandbeyond.com</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <span>2026 Loud and Beyond. All rights reserved.</span>
+      <nav>
+        <a href="index.html">Support</a>
+        <a href="mailto:info@loudandbeyond.com">Contact</a>
+      </nav>
+    </footer>
+  </div>
 </body>
-    </html>
+</html>
